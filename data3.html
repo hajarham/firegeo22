@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>FIREGEO Geoportail</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Fire HTML Templates" name="keywords">
+    <meta content="Fire HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link rel="icon" type="img/png" href="img/fire.png" />
+    
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+   <!-- Topbar Start -->
+   <div class="container-fluid px-5 d-none d-lg-block">
+    <div class="row gx-5">
+        <div class="col-lg-4 text-center py-3">
+            <div class="d-inline-flex align-items-center">
+                <i class="bi bi-geo-alt fs-1 text-primary me-3"></i>
+                <div class="text-start">
+                    <h6 class="text-uppercase fw-bold">Localisation</h6>
+                    <span>IAV Madinat Al Irfane, Rabat, Maroc</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 text-center border-start border-end py-3">
+            <div class="d-inline-flex align-items-center">
+                <i class="bi bi-envelope-open fs-1 text-primary me-3"></i>
+                <div class="text-start">
+                    <h6 class="text-uppercase fw-bold">Contactez-nous</h6>
+                    <span>geoportail-feu@gmail.com</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 text-center py-3">
+            <div class="d-inline-flex align-items-center">
+                <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i>
+                <div class="text-start">
+                    <h6 class="text-uppercase fw-bold">Appelez-nous</h6>
+                    <span>+212666283465</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Topbar End -->
+
+
+ <!-- Navbar Start -->
+ <div class="container-fluid sticky-top bg-dark bg-light-radial shadow-sm px-5 pe-lg-0">
+    <nav class="navbar navbar-expand-lg bg-dark bg-light-radial navbar-dark py-3 py-lg-0">
+        <a href="index.html" class="navbar-brand">
+            <h1 class="m-0 display-4 text-uppercase text-white"><i class="fa fa-fire fa-1x"></i> FIREGEO</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="index.html" class="nav-item nav-link active">Accueil</a>
+                <a href="about.html" class="nav-item nav-link">A propos</a>
+                <a href="service.html" class="nav-item nav-link">Produits</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Détails</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="project.html" class="dropdown-item">Données</a>
+                        <a href="detail.html" class="dropdown-item">Description</a>
+                        <a href="blog.html" class="dropdown-item">Interfaces</a>
+                        <a href="attributaire.html" class="dropdown-item">Requête attributaire</a>
+                        <a href="testimonial.html" class="dropdown-item">Mot de l'équipe</a>
+                        
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="itineraire.html" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">Carte d'itinéraire <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header">
+        <h1 class="display-3 text-uppercase text-white mb-3">Description de données</h1>
+        <div class="d-inline-flex text-white">
+            <h6 class="text-uppercase m-0"><a href="index.html">Home</a></h6>
+            <h6 class="text-white m-0 px-3">/</h6>
+            <h6 class="text-uppercase text-white m-0">Description de données</h6>
+        </div>
+    </div>
+    <!-- Page Header Start -->
+
+
+    <!-- Blog Start -->
+    <div class="container-fluid py-6 px-5">
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <!-- Blog Detail Start -->
+                <div class="mb-5">
+                    <img class="img-fluid w-100 rounded mb-5" src="img/shp.png" alt="">
+                    <h1 class="text-uppercase mb-4">Shapefile des régions du Maroc</h1>
+                    <p>C'est un fichier vecteur qui représente les limites administratives des régions du maroc selon le découpage de 2015 en 12 régions.</p>
+                    <p>Il servera d'ossature de base pour plusieurs représentations thématiques, notamment la carte de symbole proportionnel en exploitant le polygone de chaque régions pour générer le barycentre qui va abriter le symbole représentatif.</p>
+                    
+                </div>
+                <!-- Blog Detail End -->
+
+                
+
+                
+            </div>
+
+            <!-- Sidebar Start -->
+            <div class="col-lg-4">
+                
+
+                
+
+                <!-- Recent Post Start -->
+                <div class="mb-5">
+                    <h3 class="text-uppercase mb-4">Liste de données</h3>
+                    <div class="bg-light p-4">
+                        <div class="d-flex mb-3">
+                            <img class="img-fluid" src="img/mnt.png" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="detail.html" class="h6 d-flex align-items-center bg-white text-uppercase px-3 mb-0">Modèle Numérique du Terrain sous format RASTER
+                            </a>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <img class="img-fluid" src="img/casernes.png" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="data1.html" class="h6 d-flex align-items-center bg-white text-uppercase px-3 mb-0">Shapefile des casernes pompier à Tanger Tétouan Al Houceima
+                            </a>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <img class="img-fluid" src="img/hotspots.png" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="data2.html" class="h6 d-flex align-items-center bg-white text-uppercase px-3 mb-0">Nombre de feux déclenchés en 2021/2022
+                            </a>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <img class="img-fluid" src="img/shp.png" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="data3.html" class="h6 d-flex align-items-center bg-white text-uppercase px-3 mb-0">Shapefile des régions du Maroc 
+                            </a>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <img class="img-fluid" src="img/provinces.png" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="data4.html" class="h6 d-flex align-items-center bg-white text-uppercase px-3 mb-0">Shapefile des provinces et préfectures dans la région de Tanger Tétouan Al Houceima
+                            </a>
+                        </div>
+                        <div class="d-flex">
+                            <img class="img-fluid" src="img/stati.png" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="data5.html" class="h6 d-flex align-items-center bg-white text-uppercase px-3 mb-0">Table des surfaces forestières brûlée par province/préfecture
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent Post End -->
+
+                <!-- Image Start -->
+                <div class="mb-5">
+                    <img src="img/symb-prop.png" alt="" class="img-fluid rounded">
+                </div>
+                <!-- Image End -->
+
+                <!-- Tags Start -->
+                <div class="mb-5">
+                    <h3 class="text-uppercase mb-4">Mots-clés</h3>
+                    <div class="d-flex flex-wrap m-n1">
+                        <a href="" class="btn btn-outline-dark m-1">régions</a>
+                        <a href="" class="btn btn-outline-dark m-1">découpage_administratif</a>
+                        <a href="" class="btn btn-outline-dark m-1">Carte_à_symbole_proportionnel</a>
+                        <a href="" class="btn btn-outline-dark m-1">carte_thématique</a>
+                        <a href="" class="btn btn-outline-dark m-1">Shapefile</a>
+                        <a href="" class="btn btn-outline-dark m-1">polygone</a>
+                        <a href="" class="btn btn-outline-dark m-1">Tanger_Tetouan_AlHouceima</a>
+                        <a href="" class="btn btn-outline-dark m-1">Feu</a>
+                        <a href="" class="btn btn-outline-dark m-1">Forêt</a>
+                        <a href="" class="btn btn-outline-dark m-1">Feux_de_forêt</a>
+                        <a href="" class="btn btn-outline-dark m-1">Nord_Maroc</a>
+                        <a href="" class="btn btn-outline-dark m-1">Maroc</a>
+                    </div>
+                </div>
+                <!-- Tags End -->
+
+                <!-- Plain Text Start -->
+                <div>
+                    <h3 class="text-uppercase mb-4">Sommaire</h3>
+                    <div class="bg-light rounded text-center" style="padding: 30px;">
+                        <p>Les données sur les feux déclenchés sont stockées dans le shapefile des hotspots détectés par MODIS, et seront utilisées avec le shapefile du découpage administratif des régions pour produire une carte à symbole proportionnel pour mettre en évidence le grand risque de feux de forêt dans la région Tanger Tétouan Al Houceima.</p>
+                    </div>
+                </div>
+                <!-- Plain Text End -->
+            </div>
+            <!-- Sidebar End -->
+        </div>
+    </div>
+    <!-- Blog End -->
+
+
+    <!-- Footer Start -->
+    <div class="footer container-fluid position-relative bg-dark bg-light-radial text-white-50 py-6 px-5">
+        <div class="row g-5">
+            <div class="col-lg-6 pe-lg-5">
+                <a href="index.html" class="navbar-brand">
+                    <h1 class="m-0 display-4 text-uppercase text-white"><i class="fa fa-fire fa-1x"></i>FIREGEO</h1>
+                </a>
+                <p>FIREGEO est un géoportail contenant des cartes intéractives à représentation diverses. Son but ultime est de mettre l'accent sur les feux qui menacent notre patrimoine forestier, ainsi que de sensibiliser les gens sur ce sujet.</p>
+                <p><i class="fa fa-map-marker-alt me-2"></i>IAV Al Irfane, Rabat, Maroc</p>
+                <p><i class="fa fa-phone-alt me-2"></i>+212 6 345 67890</p>
+                <p><i class="fa fa-envelope me-2"></i>geoportail-feu@gmail.com</p>
+                <div class="d-flex justify-content-start mt-4">
+                    
+                </div>
+            </div>
+            <div class="col-lg-6 ps-lg-5">
+                <div class="row g-5">
+                    <div class="col-sm-6">
+                        <h4 class="text-white text-uppercase mb-4">Liens populaires</h4>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-white-50 mb-2" href="index.html"><i class="fa fa-angle-right me-2"></i>Accueil</a>
+                            <a class="text-white-50 mb-2" href="about.html"><i class="fa fa-angle-right me-2"></i>A propos</a>
+                            <a class="text-white-50 mb-2" href="service.html"><i class="fa fa-angle-right me-2"></i>Nos projets</a>
+                            <a class="text-white-50 mb-2" href="attributaire.html"><i class="fa fa-angle-right me-2"></i>Requêtes attributaires</a>
+                            <a class="text-white-50" href="itineraire.html"><i class="fa fa-angle-right me-2"></i>Carte d'itinéraire</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-12">
+                        <h4 class="text-white text-uppercase mb-4">Newsletter</h4>
+                        <div class="w-100">
+                            <div class="input-group">
+                                <input type="text" class="form-control border-light" style="padding: 20px 30px;" placeholder="Votre adresse email"><button class="btn btn-primary px-4">S'inscrire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark bg-light-radial text-white border-top border-primary px-0">
+        <div class="d-flex flex-column flex-md-row justify-content-between">
+            <div class="py-4 px-5 text-center text-md-start">
+                <p class="mb-0">&copy; <a class="text-primary" href="#">FIREGEO</a>. Tous droits réservés.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

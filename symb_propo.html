@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset=utf-8 />
+	<title>Carte à symbole proportionnel</title>
+  <link rel="icon" type="images/png" href="images/fire.png" />
+
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="crossorigin=""/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,900i" rel="stylesheet">
+	<style>
+		
+		body {
+			margin: 0;
+			padding: 0;
+			background: #e3e3e6;
+			font-family: 'Lato', sans-serif;
+			font-weight: 300;
+			color: #3d3d3d;
+			font-size: 100%;
+			/* 16px is default browser size */
+
+		}
+
+		header,
+		section,
+		footer {
+			width: 80%;
+			margin: 10px auto;
+		}
+
+		h1 {
+			font-weight: 900;
+			font-size: 2.8em;
+			font-style: italic;
+			/* The em unit. 3x the current size */
+			letter-spacing: .02em;
+			margin: 5px 0;
+			/* text-transform: uppercase; */
+		}
+
+		h2 {
+			font-weight: 300;
+			color: #63666a;
+			font-size: 2.2em;
+			letter-spacing: .06em;
+			font-style: italic;
+			margin: 5px 0;
+		}
+
+		h3 {
+			font-weight: 300i;
+			font-size: 1.5em;
+			margin-bottom: 5px;
+		}
+
+		p {
+			font-size: 1.3em;
+			line-height: 1.8em;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: #004A8B;
+			font-weight: 400;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		ul {
+			padding: 0px 20px 4px 20px;
+			font-size: 1.1em;
+			line-height: 1.2em;
+			color: #63666a;
+		}
+
+		li {
+			margin: 10px 0
+		}
+
+		hr {
+			margin: 20px 0;
+			border: 0;
+			height: 1px;
+			background: #63666a;
+
+		}
+
+		.linkbox {
+			margin: 3px 0 20px 0;
+			display: block;
+			font-size: 0.9em;
+			font-weight: 300;
+			line-height: 1.3em;
+		}
+
+		#map {
+			width: 100%;
+			height: 450px;
+			margin: 20px auto;
+
+		}
+
+		.max-image-width {
+			width: 100%;
+		}
+
+		/* Use float property to make two-column layout */
+		.first-column {
+			float: left;
+			width: 49%;
+			padding-right: 2%;
+		}
+
+		.column {
+			float: left;
+			width: 49%;
+		}
+
+		/* Clear floats after the columns */
+		.row::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+		.leaflet-popup-content p {
+			margin: 1px 0 -8px;
+			font-size: 1.1em;
+		}
+
+		.leaflet-popup-content h3 {
+			font-family: 'Slabo 27px', serif;
+			font-size: 1.3em;
+			margin-bottom: 1px;
+		}
+
+		/* When browser is 900px wide or less */
+		@media screen and (max-width: 900px) {
+
+			.first-column,
+			.second-column {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+  
+	<header>
+		<center>
+		<h1>Nombre de feux de forêt par région au Maroc durant les années 2021/2022</h1>
+	</center>
+	</header>
+	<section>
+		<div class="row">
+			<div id="map"></div>
+
+			<div class="first-column">
+				<h3><b>Carte à symbole proportionnel</b></h3>
+				<p>
+					Cette carte montre le nombre de hotspots observé à chaque région du Maroc. Les données sont produites à partir des données quotidiennes de réflectance de surface dérivées de Terra et Aqua MODIS. <br> La carte montre une dominance largement observable du nombre de feux occurants dans la région Tanger Tétouan Al Houceima, ce qui justifie l'intérêt porté à cette région dans notre travail.
+	      </p>
+
+				<h3><b>Partenaires</b></h3>
+				
+
+			</div>
+			<div class="column">
+				<img class="max-image-width" src="images/forestfire.jpg" title="Feu de forêt à Tétouan, Nord du Maroc">
+				<div class="linkbox">
+					<center>Feu de forêt à Tétouan, Nord du Maroc</center>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<hr>
+
+		<a href="https://iav.ac.ma/">
+			<img src="images/Logo_iav.png" alt="Institut Agronomique et Véterinaire Hassan II">
+		</a>
+
+		<a href="https://iav.ac.ma/sites/default/files/2020-06/SGIT.pdf">
+			<img src="images/logo_esgit.png" alt="ESGIT IAV HASSAN II">
+		</a>
+
+	</footer>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.js"></script>
+	<script src="symb.js"></script>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+
+    <!-- leaflet css  -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+	<script>
+		// map options
+		var options = {
+			center: [29.795911197522592, -8.660118044996043],
+			zoom: 5
+		}
+
+		// create a Leaflet map in our division container with id of 'map'
+		var map = L.map('map', options);
+
+		// Leaflet providers base map URL
+		var basemap_source =
+			'https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/dark_all/{z}/{x}/{y}.png'
+
+		// Leaflet providers attributes
+		var basemap_options = {
+			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+			subdomains: 'abcd',
+			maxZoom: 19
+		};
+    
+
+
+		// request some basemap tiles and add to the map
+		var tiles = L.tileLayer(basemap_source, basemap_options).addTo(map);
+    var symb = {
+    "type": "FeatureCollection",
+    "name": "symb",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+    { "type": "Feature", "properties": { "CODE": 12.0, "REGIONS": "Ed-Dakhla - Oued Ed Dahab", "lon" : -14.607255118093928 , "lat" : 22.934157667828075 , "HOTSPOT": 0 }, "geometry": { "type": "Point", "coordinates": [ -14.607255118093928, 22.934157667828075 ] } },
+    { "type": "Feature", "properties": { "CODE": 11.0, "REGIONS": "Laayoune - Saguia Al Hamra", "lon" : -11.49753370874619 , "lat" : 26.331383193883294 , "HOTSPOT": 0 }, "geometry": { "type": "Point", "coordinates": [ -11.49753370874619, 26.331383193883294 ] } },
+    { "type": "Feature", "properties": { "CODE": 10.0, "REGIONS": "Gouelmim - Oued Noun", "lon" : -10.095136204683342 , "lat" : 29.781168051554445 , "HOTSPOT": 1 }, "geometry": { "type": "Point", "coordinates": [ -10.095136204683342, 28.298817013661584 ] } },
+    { "type": "Feature", "properties": { "CODE": 9.0, "REGIONS": "Sous - Massa", "lon" : -8.183772146613638 , "lat" : 28.298817013661584 , "HOTSPOT": 25 }, "geometry": { "type": "Point", "coordinates": [ -8.183772146613638, 29.781168051554445 ] } },
+    { "type": "Feature", "properties": { "CODE": 8.0, "REGIONS": "Daraa - Tafilalt", "lon" : -5.699999161592401 , "lat" : 31.210430958586343 , "HOTSPOT": 8 }, "geometry": { "type": "Point", "coordinates": [ -5.699999161592401, 31.210430958586343 ] } },
+    { "type": "Feature", "properties": { "CODE": 2.0, "REGIONS": "Oriental", "lon" : -2.412736568538467 , "lat" : 33.566603140925551 , "HOTSPOT": 16 }, "geometry": { "type": "Point", "coordinates": [ -2.412736568538467, 33.566603140925551 ] } },
+    { "type": "Feature", "properties": { "CODE": 1.0, "REGIONS": "Tanger - Tétouan - Al Houciema", "lon" : -5.430825796559335 , "lat" : 35.21883135300574 , "HOTSPOT": 141 }, "geometry": { "type": "Point", "coordinates": [ -5.430825796559335, 35.21883135300574 ] } },
+    { "type": "Feature", "properties": { "CODE": 4.0, "REGIONS": "Rabat - Sallé - Kénitra", "lon" : -6.31345772607836 , "lat" : 34.091198833058371 , "HOTSPOT": 46 }, "geometry": { "type": "Point", "coordinates": [ -6.31345772607836, 34.091198833058371 ] } },
+    { "type": "Feature", "properties": { "CODE": 6.0, "REGIONS": "Casablanca - Settat", "lon" : -7.7963242245599 , "lat" : 33.075024112733907 , "HOTSPOT": 19 }, "geometry": { "type": "Point", "coordinates": [ -7.7963242245599, 33.075024112733907 ] } },
+    { "type": "Feature", "properties": { "CODE": 7.0, "REGIONS": "Marrakech - Safi", "lon" : -8.310407925418486 , "lat" : 31.806125512229784 , "HOTSPOT": 9 }, "geometry": { "type": "Point", "coordinates": [ -8.310407925418486, 31.806125512229784 ] } },
+    { "type": "Feature", "properties": { "CODE": 5.0, "REGIONS": "Beni Mellal - Khenifra", "lon" : -6.298213354209073 , "lat" : 32.421477442451994 , "HOTSPOT": 16 }, "geometry": { "type": "Point", "coordinates": [ -6.298213354209073, 32.421477442451994 ] } },
+    { "type": "Feature", "properties": { "CODE": 3.0, "REGIONS": "Fès - Meknès", "lon" : -4.889724098081432 , "lat" : 33.739566712773211 , "HOTSPOT": 59 }, "geometry": { "type": "Point", "coordinates": [ -4.889724098081432, 33.739566712773211 ] } }
+    ]
+    };
+symb.features.sort(function(a, b) {
+  return b.properties.HOTSPOT - a.properties.HOTSPOT;
+});
+function getRadius(area) {
+  var radius = Math.sqrt(area);
+  return radius;
+}		
+L.geoJson(symb, {
+			pointToLayer: function (feature, latlng) {
+				return L.circleMarker(latlng, {
+					color: 'red',
+					weight: 1,
+					fillColor: 'red',
+					fillOpacity: 0.8,
+					radius: getRadius(feature.properties.HOTSPOT)
+				});
+			},
+			onEachFeature: function (feature, layer) {
+				var popup =
+					'<p><b>' + layer.feature.properties.REGIONS + '</b></p>' +
+          '<p>Code de la région: ' + layer.feature.properties.CODE + ' </p>' +
+					'<p>Nombre de feux détectés: ' + layer.feature.properties.HOTSPOT + '</p>'
+					
+
+				layer.on('mouseover', function () {
+					layer.bindPopup(popup).openPopup();
+					layer.setStyle({
+						fillColor: 'yellow',
+						fillOpacity: 0.8
+					});
+				});
+
+				layer.on('mouseout', function () {
+					layer.setStyle({
+						fillColor: 'red',
+						fillOpacity: 0.8
+					});
+					layer.bindPopup(popup).closePopup();
+				})
+
+			}
+		}).addTo(map);
+
+	
+	</script>
+
+</body>
+
+</html>
