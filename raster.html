@@ -242,15 +242,7 @@
         maxZoom: 16,
         ext: 'jpg'
     });
-	map.on('mouseover', function () {
-        console.log('your mouse is over the map')
-    })
-
-    map.on('mousemove', function (e) {
-        document.getElementsByClassName('coordinate')[0].innerHTML = 'lat: ' + e.latlng.lat + 'lng: ' + e.latlng.lng;
-        console.log('lat: ' + e.latlng.lat, 'lng: ' + e.latlng.lng)
-    })
-
+	
     watercolor.addTo(map);
 	var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
